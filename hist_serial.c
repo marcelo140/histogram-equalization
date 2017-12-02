@@ -7,18 +7,17 @@
 #include <string.h>
 #include "bmp.h"
 
-// declare image dimensions and size as constant global variables
-const int image_width = 512;
-const int image_height = 512;
-const int image_size = 512*512;
-const int color_depth = 255;
-
 int main(int argc, char** argv){
 
-    if(argc != 2){
-        printf("Usage: %s image\n", argv[0]);
+    if(argc != 4){
+        printf("Usage: %s image width height\n", argv[0]);
         exit(-1);
     }
+
+    const int image_width = atoi(argv[2]);
+    const int image_height = atoi(argv[3]);
+    const int image_size = image_width * image_height;
+    const int color_depth = 255;
 
     // read from the input bmp image file
     unsigned char* image = read_bmp(argv[1]);

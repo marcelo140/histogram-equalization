@@ -1,0 +1,2 @@
+# HistogramEqualization
+Parallel computing project

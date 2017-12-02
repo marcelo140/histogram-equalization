@@ -32,8 +32,12 @@ int main(int argc, char** argv){
     // finding the normalised values using cumulative mass function
     float* transfer_function = (float*)calloc(sizeof(float), color_depth);
     for(int i = 0; i < color_depth; i++){
-        for(int j = 0; j <= i; j++){
-            transfer_function[i] += color_depth*((float)histogram[j])/(image_size);
+        int sum = 0;
+        for(int j = 0; j <= i; j++) {
+            sum += histogram[j];
+        }
+
+        transfer_function[i] = ((float) color_depth * sum) / (image_size);
         }
     }
 

@@ -38,7 +38,6 @@ int main(int argc, char** argv){
         }
 
         transfer_function[i] = ((float) color_depth * sum) / (image_size);
-        }
     }
 
     for(int i = 0; i < image_size; i++){

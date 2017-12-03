@@ -52,7 +52,7 @@ void write_bmp(unsigned char* data, int width, int height){
 }
 
 //method to read data from a bmp image file
-unsigned char* read_bmp(char* filename){
+unsigned char* read_bmp(char* filename, int* rwidth, int* rheight){
 
     FILE* fp = fopen(filename, "rb");
 
@@ -76,6 +76,8 @@ unsigned char* read_bmp(char* filename){
 
     fclose(fp);
 
+    *rwidth = width;
+    *rheight = height;
     return data;
 }
 

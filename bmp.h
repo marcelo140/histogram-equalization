@@ -34,6 +34,6 @@ struct bmp_dib_header{
 };
 
 void write_bmp(unsigned char* data, int width, int height);
-unsigned char* read_bmp(char* filename);
+unsigned char* read_bmp(char* filename, int* rwidth, int* rheight);
 
 #endif
